@@ -132,6 +132,8 @@
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -139,7 +141,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>.as</string>
+				<string>{var:mainkeyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -151,7 +153,7 @@
 				<key>runningsubtext</key>
 				<string>Loading scripts…</string>
 				<key>script</key>
-				<string>/usr/bin/python appscripts.py search "$1"</string>
+				<string>python3 appscripts.py search "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -170,7 +172,7 @@
 			<key>uid</key>
 			<string>E91E210D-F78B-4CB1-8B44-9A857473689C</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -250,9 +252,7 @@ echo "$name"</string>
 				<key>hotkey</key>
 				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1310720</integer>
-				<key>hotstring</key>
-				<string>A</string>
+				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -271,7 +271,7 @@ echo "$name"</string>
 			<key>config</key>
 			<dict>
 				<key>openwith</key>
-				<string>/Applications/Utilities/Script Editor.app</string>
+				<string>/System/Applications/Utilities/Script Editor.app</string>
 				<key>sourcefile</key>
 				<string></string>
 			</dict>
@@ -283,6 +283,11 @@ echo "$name"</string>
 			<integer>3</integer>
 		</dict>
 		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string></string>
+			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.revealfile</string>
 			<key>uid</key>
@@ -293,6 +298,8 @@ echo "$name"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>settings</string>
 			</dict>
@@ -310,6 +317,8 @@ echo "$name"</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -329,7 +338,7 @@ echo "$name"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python appscripts.py config "$1"</string>
+				<string>python3 appscripts.py config "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -348,7 +357,7 @@ echo "$name"</string>
 			<key>uid</key>
 			<string>1BA77C1B-6BC1-4E2C-91B0-2455517B2092</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -379,7 +388,7 @@ echo "$name"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>/usr/bin/python appscripts.py $1</string>
+				<string>python3 appscripts.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -421,93 +430,119 @@ echo "$name"</string>
 		<key>0DE16F6E-6B2E-4FD7-9146-87C526800384</key>
 		<dict>
 			<key>xpos</key>
-			<integer>60</integer>
+			<real>60</real>
 			<key>ypos</key>
-			<integer>40</integer>
+			<real>40</real>
 		</dict>
 		<key>1BA77C1B-6BC1-4E2C-91B0-2455517B2092</key>
 		<dict>
 			<key>note</key>
 			<string>Show configuration options</string>
 			<key>xpos</key>
-			<integer>260</integer>
+			<real>260</real>
 			<key>ypos</key>
-			<integer>450</integer>
+			<real>450</real>
 		</dict>
 		<key>62BFD5A0-D2C6-4222-BF37-9F92C8A09F47</key>
 		<dict>
 			<key>note</key>
 			<string>Change configuration</string>
 			<key>xpos</key>
-			<integer>460</integer>
+			<real>460</real>
 			<key>ypos</key>
-			<integer>450</integer>
+			<real>450</real>
 		</dict>
 		<key>65556B95-5798-4CCA-8AA9-856795FAC78B</key>
 		<dict>
 			<key>note</key>
 			<string>Re-open workflow settings</string>
 			<key>xpos</key>
-			<integer>660</integer>
+			<real>660</real>
 			<key>ypos</key>
-			<integer>580</integer>
+			<real>580</real>
 		</dict>
 		<key>6D6DEF2A-5AF8-4EE9-90B8-F54C11E3660C</key>
 		<dict>
 			<key>note</key>
 			<string>Run the script</string>
 			<key>xpos</key>
-			<integer>460</integer>
+			<real>460</real>
 			<key>ypos</key>
-			<integer>40</integer>
+			<real>40</real>
 		</dict>
 		<key>AF9E613E-CBA5-478B-B924-C1D0B0D88D1C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<real>460</real>
 			<key>ypos</key>
-			<integer>190</integer>
+			<real>190</real>
 		</dict>
 		<key>BDFDF78C-6D61-4023-99F9-CE926B973987</key>
 		<dict>
 			<key>xpos</key>
-			<integer>660</integer>
+			<real>660</real>
 			<key>ypos</key>
-			<integer>450</integer>
+			<real>450</real>
 		</dict>
 		<key>DD5D1469-1BD0-4F79-8E21-E3D2074DD472</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<real>460</real>
 			<key>ypos</key>
-			<integer>320</integer>
+			<real>320</real>
 		</dict>
 		<key>E8FFFB36-186D-46CC-995C-EBFCFA84296F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>660</integer>
+			<real>660</real>
 			<key>ypos</key>
-			<integer>40</integer>
+			<real>40</real>
 		</dict>
 		<key>E91E210D-F78B-4CB1-8B44-9A857473689C</key>
 		<dict>
 			<key>note</key>
 			<string>Show scripts for the active application</string>
 			<key>xpos</key>
-			<integer>260</integer>
+			<real>260</real>
 			<key>ypos</key>
-			<integer>40</integer>
+			<real>40</real>
 		</dict>
 		<key>F4E3668B-6F3C-48C6-8E03-E71815F3E389</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<real>70</real>
 			<key>ypos</key>
-			<integer>450</integer>
+			<real>450</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>.as</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Main Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>mainkeyword</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>3.2.0</string>
+	<string>3.3</string>
 	<key>webaddress</key>
 	<string>www.deanishe.net</string>
 </dict>

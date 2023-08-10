@@ -164,7 +164,7 @@ class AppScripts(object):
         try:
             scripts = self.get_scripts_for_app()
         except RuntimeError as err:
-            self.show_error(unicode(err, 'utf-8'))
+            self.show_error(err, 'utf-8')
             return 1
 
         if not scripts:
@@ -314,7 +314,7 @@ class AppScripts(object):
 
         """
         with timer('get active app'):
-            output = run_command(['./ActiveApp']).decode('utf-8')
+            output = run_command(['./ActiveApp'])
 
             app_name, bundle_id, app_path = [
                 s.strip() for s in output.split('\n')]
